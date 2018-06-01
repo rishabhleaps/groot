@@ -1,0 +1,51 @@
+<div class="container" ng-controller="sidebarController">
+  <div class="row profile">
+    <div class="col-md-6">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+          <img src="{{employee.imgUrl}}" class="img-responsive" alt="">
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            {{employee.name}}
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu">
+          <ul class="nav">
+            <li ng-if="isAdmin">
+              <a href="">
+							<i class="glyphicon glyphicon-home"></i>
+							Admin</a>
+            </li>
+            <li ng-if="isManager">
+              <a href="">
+							<i class="glyphicon glyphicon-user"></i>
+							Manager </a>
+            </li>
+            <li class="active">
+              <a href="">
+							<i class="glyphicon glyphicon-ok"></i>
+							Apply For Leave </a>
+            </li>
+            <li>
+              <a href="">
+							<i class="glyphicon glyphicon-flag"></i>
+							Check Status </a>
+            </li>
+            <li>
+              <a href="" ng-click="signOut()">
+              <i class="fa fa-sign-in big-icon"></i>
+              Sign Out</a>
+            </li>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+  </div>
+</div>

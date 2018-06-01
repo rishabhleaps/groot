@@ -1,0 +1,59 @@
+.login-form {
+  width: 340px;
+  margin: 150px auto;
+}
+
+.login-form form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  padding: 30px;
+}
+
+.login-form h2 {
+  margin: 0 0 15px;
+}
+
+.form-control, .btn {
+  min-height: 38px;
+  border-radius: 2px;
+}
+
+.btn {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.nineleaps-color {
+  background-color: #28426d;
+  color: white;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-weight: bold;
+}
+
+form-group>.nineleaps-color:hover {
+  background-color: #28426d;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.signout {
+  color: white;
+}
+
+.signout:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.signout-div {
+  margin: 12px;
+  cursor: pointer;
+  color: white;
+}
+
+.align-mid {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}

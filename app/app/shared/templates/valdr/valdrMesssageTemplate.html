@@ -1,0 +1,11 @@
+<div class="valdr-message">
+  <ul class="valdr-error-message alert alert-danger">
+    <li ng-repeat="violation in violations">
+      <ul class="error-messages">
+        <li translate="{{ message }}" translate-values="violation" ng-repeat="message in violation.message.split(' | ')">
+          {{ message }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
