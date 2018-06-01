@@ -79,6 +79,7 @@ form-group>.nineleaps-color:hover {
 
 .radius-property {
   border-radius: 35px !important;
+  padding-left: 30px !important;
 }
 
 .search-button {
@@ -106,7 +107,7 @@ form-group>.nineleaps-color:hover {
 
 .color-code-red {
   height: 30px;
-  width: 33%;
+  width: 30%;
   background-color: #FF4545;
   border-radius: 30px;
   margin-left: 14px;
@@ -114,16 +115,18 @@ form-group>.nineleaps-color:hover {
 
 .color-code-green {
   height: 30px;
-  width: 29%;
+  width: 30%;
   background-color: #02bb30;
   border-radius: 30px;
+  margin-left: 5px;
 }
 
 .color-code-yellow {
   height: 30px;
-  width: 34%;
+  width: 29.5%;
   background-color: #ffee2fc7;
   border-radius: 30px;
+  margin-left: 5px;
 }
 
 .color-code-red-history {
@@ -133,14 +136,14 @@ form-group>.nineleaps-color:hover {
   border-radius: 30px;
 }
 
-.color-code-green--history {
+.color-code-green-history {
   height: 30px;
   width: 30px;
   background-color: #02bb30;
   border-radius: 30px;
 }
 
-.color-code-yellow--history {
+.color-code-yellow-history {
   height: 30px;
   width: 30px;
   background-color: #ffee2fc7;
@@ -160,6 +163,7 @@ form-group>.nineleaps-color:hover {
 
 .upper-margin {
   margin-top: 20px !important;
+  margin-left: 0px !important;
 }
 
 .upper-margin-projectDetail {
@@ -204,7 +208,8 @@ form-group>.nineleaps-color:hover {
 }
 
 .card-height {
-  height: 240px;
+  max-height: 270px;
+  height: 270px;
 }
 
 .circle-margin {
@@ -336,11 +341,6 @@ ol li {
   color: #FFF;
 }
 
-/* #menubar {
-  width: 880px;
-  height: 60px;
-} */
-
 ul#menu {
   float: left;
   margin: 1px 2px 0 0;
@@ -391,4 +391,19 @@ ul#menu li.selected a, ul#menu li.selected a:hover {
   float: left;
   text-shadow: 10px 10px gray;
   /* filter: drop-shadow(8px 10px 20px rgba(0, 0, 0, 0.6)); */
+}
+
+.splash-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 67.5%; */
+}
+
+.upper-card-project-margin{
+  padding-top: 5px;
+}
+
+.main-pad{
+  padding:22px !important;
 }

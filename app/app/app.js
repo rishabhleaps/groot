@@ -33,7 +33,7 @@ angular
   .config(['$urlRouterProvider', '$httpProvider', 'growlProvider', 'valdrMessageProvider', 'valdrProvider', '$translateProvider', '$stateProvider', 'cfpLoadingBarProvider',
     function($urlRouterProvider, $httpProvider, growlProvider, valdrMessageProvider, valdrProvider, $translateProvider, stateProvider,cfpLoadingBarProvider) {
       $urlRouterProvider
-        .otherwise('/login');
+        .otherwise('/splash');
 
       // set default timeout for Growl notifications
       growlProvider.globalTimeToLive(5000);
