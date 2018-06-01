@@ -1,0 +1,14 @@
+
+
+[ng-cloak].splash {
+    display: block !important;
+}
+
+.splash {
+    display: block;
+    position: absolute;
+    filter: alpha(opacity=60);
+    opacity: 0.6;
+    background: #000;
+}
+
