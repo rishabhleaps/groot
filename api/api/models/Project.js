@@ -8,10 +8,11 @@ var uuid = require('uuid4');
 
 module.exports = {
 
+  dontUseObjectIds: true,
   attributes: {
-    pid: {
-      type: 'string',
-      unique: true
+    id: { 
+      type: 'string', 
+      columnName: '_id'
     },
     name: {
       type: 'string',
@@ -20,7 +21,6 @@ module.exports = {
     customer: {
       type: 'string',
       required: true,
-      isEmail: true
     },
     startDate: {
       type: 'string'
@@ -28,7 +28,15 @@ module.exports = {
     isDeleted: {
       type: 'boolean',
       defaultsTo: false
-    }
+    },
+    status: {
+      collection: 'status',
+      via: 'project'
+    },
+    racis: {
+      collection: 'raci',
+      via: 'project'
+    }    
   },
   createProject: createProject,
   getProject: getProject,
@@ -39,32 +47,46 @@ module.exports = {
 };
 
 async function createProject(body) {
-  body = Object.assign({pid: generateProjectId()}, body);
+  body = Object.assign({id: generateProjectId()}, body);
   
   let project = await Project.create(body).fetch();
 
   return project;
 }
 
-async function updateProject(pid, body) {
-  return await Project.update({pid: pid}, body).fetch();
+async function updateProject(id, body) {
+  return await Project.update({id: id}, body).fetch();
 }
 
-async function getProject(pid) {
+async function getProject(id) {
   return await Project.findOne({
-    pid: pid
+    id: id
   });
 }
 
 async function getProjectList() {
-  return await Project.find({isDeleted: false});
+  let projects = await Project.find({isDeleted: false}).populate('racis').populate('status', {sort: 'updatedAt DESC'});
+
+  let projectList = projects.map(project => {
+    let racis = project.racis.map(raci => {
+      return User.getUser(raci.user).then(user => {
+        return Object.assign(user, {role: raci.role, isProjectManager: raci.isProjectManager});
+      });    
+    });
+
+    return Promise.all(racis).then(racis => {
+      return Object.assign(project, {racis: racis});
+    });
+  });
+
+  return Promise.all(projectList).then(projectList => projectList);
 }
 
-async function deleteProject(pid, body) {
-  let project = await getProject(pid);
+async function deleteProject(id, body) {
+  let project = await getProject(id);
   project = Object.assign(project, {isDeleted: true});
 
-  return await updateProject(pid, project);
+  return await updateProject(id, project);
 }
 
 function generateProjectId() {

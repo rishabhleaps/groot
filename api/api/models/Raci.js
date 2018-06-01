@@ -5,24 +5,16 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
-var uuid = require('uuid4');
+const uuid = require('uuid4');
+const ObjectId = require('mongodb').ObjectID;
 
 module.exports = {
 
+  dontUseObjectIds: true,
   attributes: {
-    raciid: {
-      type: 'string',
-      unique: true
-    },
-    pid: {
-      type: 'string',
-      required: true,
-      unique: true
-    },
-    raciid: {
-      type: 'string',
-      required: true,
-      unique: true      
+    id: { 
+      type: 'string', 
+      columnName: '_id'
     },
     role: {
       type: 'string',
@@ -35,6 +27,12 @@ module.exports = {
     isDeleted: {
       type: 'boolean',
       defaultsTo: false
+    },
+    project: {
+      model: 'project'    
+    },
+    user: {
+      model: 'user'
     }
   },
   createRaci: createRaci,
@@ -46,20 +44,21 @@ module.exports = {
 };
 
 async function createRaci(body) {
-  body = Object.assign({raciid: generateRaciId()}, body);
+  body = Object.assign({id: generateRaciId()}, body);
   
   let raci = await Raci.create(body).fetch();
 
   return raci;
 }
 
-async function updateRaci(raciid, body) {
-  return await Raci.update({raciid: raciid}, body).fetch();
+async function updateRaci(id, body) {
+  return await Raci.update({id: id}, body).fetch();
 }
 
-async function getRaci(raciid) {
+async function getRaci(id) {
   return await Raci.findOne({
-    raciid: raciid
+    id: id,
+    isDeleted: false
   });
 }
 
@@ -67,11 +66,11 @@ async function getRaciList() {
   return await Raci.find({isDeleted: false});
 }
 
-async function deleteRaci(raciid, body) {
-  let raci = await getRaci(raciid);
+async function deleteRaci(id, body) {
+  let raci = await getRaci(id);
   raci = Object.assign(raci, {isDeleted: true});
 
-  return await updateRaci(raciid, raci);
+  return await updateRaci(id, raci);
 }
 
 function generateRaciId() {

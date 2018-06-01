@@ -16,32 +16,32 @@ module.exports = {
     get: get,
     update: update,
     getList: getList,
-    delete: deleteProject
+    delete: deleteStatus
 
 };
 
 async function create(req, res) {
-    let data = await Project.createProject(req.body);
+    let data = await Status.createStatus(req.body);
 
     return res.json(data);
 }
 
 async function get(req, res) {
-    let data = await Project.getProject(req.params.id);
+    let data = await Status.getStatus(req.params.id);
 
     return res.json(data);
 }
 
 async function update(req, res) {
-    let data = await Project.updateProject(req.params.id, req.body);
+    let data = await Status.updateStatus(req.params.id, req.body);
 
     return res.json(data);
 }
 
 async function getList(req, res) {
-    return res.json(await Project.getProjectList());
+    return res.json(await Status.getStatusList());
 }
 
-async function deleteProject(req, res) {
-    return res.json(await Project.deleteProject(req.params.id));
+async function deleteStatus(req, res) {
+    return res.json(await Status.deleteStatus(req.params.id));
 }
