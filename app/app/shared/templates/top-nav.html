@@ -1,5 +1,14 @@
-<nav class="navbar navbar-default navbar-fixed-top nineleaps-color" ng-controller="navbarController">
-    <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="home" style="color:white">GROOT</a>
-    </div>
+<nav class="navbar navbar-default navbar-fixed-top" id="nav" role="navigation">
+  <div class="container">
+    <a class="navbar-brand" ui-sref="boards">
+        <!-- <img alt="Groot" src="assets/images/logo.jpg" class="img-responsive" /> -->
+      </a>
+    <ul class="nav navbar-nav" ng-if="isLoggedIn">
+      <li>
+        <li><a>Projects</a></li>
+        <li><a>Insights</a></li>
+        <li><a>Admin</a></li>
+      </li>
+    </ul>
+  </div>
 </nav>
