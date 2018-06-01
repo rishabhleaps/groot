@@ -4,7 +4,7 @@ angular.module('groot.controllers')
   .controller('adminController', ['$scope', '$state', '$stateParams','growl','localStorageService',
     function($scope, $state, $stateParams,growl,localStorageService) {
       function init() {
-        $scope.user = {};
+        $scope.project = {};
       }
 
       $scope.login = function(){

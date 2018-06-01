@@ -6,25 +6,33 @@
       <h3>Create Project</h3>
       <form class="m-t" ng-submit="login()" role="form">
         <div class="form-group">
-              <input type="text" class="form-control" ng-model = "user.email" placeholder="Project Name" required="">
+              <input type="text" class="form-control" ng-model = "project.projectName" placeholder="Project Name" required="">
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" ng-model = "user.email" placeholder="Customer Name" required="">
+            <input type="text" class="form-control" ng-model = "project.customerName" placeholder="Customer Name" required="">
       </div>
       <div class="form-group">
-          <input type="date" class="form-control" ng-model = "user.email" placeholder="Date" required="">
+          <input type="date" class="form-control" ng-model = "project.date" placeholder="Date" required="">
         </div>
-        <div class="form-group">
-          <input type="email" class="form-control" ng-model = "user.email" placeholder="Username" required="">
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" ng-model = "user.password" placeholder="Password" required="">
-        </div>
-        <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
-        <a><small>Forgot password?</small></a>
-        <p class="text-muted text-center"><small>Do not have an account?</small></p>
-        <a class="btn btn-sm btn-white btn-block" data-toggle="modal" data-target="#signupmodal">Create an account</a>
+
+        <div class="form-group"><hr/></div>
+
+
+        <div class="form-group">
+          <input type="email" class="form-control" ng-model = "project.accountable" placeholder="Accountable" required="">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" ng-model = "project.responsible" placeholder="Responsible" required="" multiple>
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" ng-model = "project.consulted" placeholder="Consulted" required="" multiple>
+          </div>
+        <div class="form-group">
+            <input type="email" class="form-control" ng-model = "project.informed" placeholder="Informed" required="" multiple>
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary block full-width m-b">Create Project</button>
       </form>
     </div>
   </div>

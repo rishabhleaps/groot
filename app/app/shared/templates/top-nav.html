@@ -2,9 +2,12 @@
   <div class="container">
       <div id="main" class="navbar navbar-default navbar-fixed-top">
           <div id="header">
+              <div class="pull-right lbtn" ng-click="logout()" ng-if="isLoggedIn">
+                  <img  alt="image" class="img-circle img-responsive" ng-src="{{imageUrl}}" title="Logout"/>
+                </div>
             <div id="logo">
               <div id="logo_text" ui-sref="projects">
-                <img class="image" src="/assets/images/groot_header.png">
+                <a><img class="image" src="/assets/images/groot_header.png"></a>
               </div>
             </div>
             <div id="menubar">
@@ -14,9 +17,6 @@
                 <li><a ui-sref="admin">Admin</a></li>
               </ul>
             </div>
-          </div>
-          <div class="pull-right">
-            <img  alt="image" class="img-circle m-t-xs img-responsive" ng-src="{{imageUrl}}"/>
           </div>
       </div>
   </div>

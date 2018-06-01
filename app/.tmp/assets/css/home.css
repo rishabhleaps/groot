@@ -336,11 +336,6 @@ ol li {
   color: #FFF;
 }
 
-/* #menubar {
-  width: 880px;
-  height: 60px;
-} */
-
 ul#menu {
   float: left;
   margin: 1px 2px 0 0;
@@ -354,7 +349,7 @@ ul#menu li {
   background: transparent;
 }
 
-ul#menu li a:hover {
+ul#menu li a:hover{
   font-weight: bold;
   background-color: #347EBC;
   background: #347EBC;
@@ -390,5 +385,8 @@ ul#menu li.selected a, ul#menu li.selected a:hover {
 .image {
   float: left;
   text-shadow: 10px 10px gray;
-  /* filter: drop-shadow(8px 10px 20px rgba(0, 0, 0, 0.6)); */
+}
+
+.lbtn{
+  margin-top: 12px;
 }
