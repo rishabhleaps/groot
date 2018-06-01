@@ -1,28 +1,23 @@
 <nav class="navbar navbar-default navbar-fixed-top" id="nav" role="navigation" ng-controller="navbarController">
   <div class="container">
-    <a class="navbar-brand" ui-sref="boards">
-        <!-- <img alt="Groot" src={{imageUrl}} class="img-responsive" /> -->
-    </a>
       <div id="main" class="navbar navbar-default navbar-fixed-top">
           <div id="header">
             <div id="logo">
-              <div id="logo_text">
+              <div id="logo_text" ui-sref="projects">
                 <img class="image" src="/assets/images/groot_header.png">
               </div>
             </div>
             <div id="menubar">
               <ul id="menu" class="nav navbar-nav" ng-if="isLoggedIn">
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Insights</a></li>
-                <li><a href="#">Admin</a></li>
+                <li><a ui-sref="projects">Projects</a></li>
+                <li><a ui-sref="insights">Insights</a></li>
+                <li><a ui-sref="admin">Admin</a></li>
               </ul>
             </div>
+          </div>
+          <div class="pull-right">
+            <img  alt="image" class="img-circle m-t-xs img-responsive" ng-src="{{imageUrl}}"/>
           </div>
       </div>
   </div>
 </nav>
-
-
-
-
-

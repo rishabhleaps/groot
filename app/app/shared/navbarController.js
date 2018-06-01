@@ -5,6 +5,8 @@ angular
 
       function init() {
         var name = localStorageService.get('name');
+        $scope.isLoggedIn = localStorageService.get('isLoggedIn');
+        $scope.imageUrl='';
         getNameCanvas(name);
       }
 
@@ -36,7 +38,6 @@ angular
           context.fillText(lastName.toUpperCase(), 30, 35);
         }
         $scope.imageUrl = canvas.toDataURL();
-        return $scope.imageUrl;
       };
 
       init();
