@@ -126,7 +126,7 @@ form-group>.nineleaps-color:hover {
 
 .projectname-margin{
   margin-top: 20px !important;
-  color:#aaaeb1e6;
+  color:#000000c7;
   font-size: 13px;
 }
 .color-code-green{
@@ -138,6 +138,13 @@ form-group>.nineleaps-color:hover {
 .upper-margin{
   margin-top: 20px !important;
 }
+
+.upper-margin-projectDetail{
+  margin-top: 40px !important;
+  width: 100%;
+  height: 100%;
+}
+
 
 .align-row{
   margin: 0px !important;
@@ -153,7 +160,7 @@ form-group>.nineleaps-color:hover {
 }
 
 .account-text{
-  color:#8c9ab7e6 !important;
+  color:#000000c7 !important;
 }
 
 .account-text-sub{
@@ -176,4 +183,19 @@ form-group>.nineleaps-color:hover {
 
 .card-height{
   height: 240px;
+}
+
+.circle-margin{
+  padding-top: 5px !important;
+}
+
+.detail-button{
+  color: #676a6c !important;
+}
+
+.detail-button:hover{
+  color: #676a6c !important;
+}
+.detail-button:focus{
+  color: #676a6c !important;
 }
