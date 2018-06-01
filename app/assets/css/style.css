@@ -3605,10 +3605,10 @@ video {
   padding: 20px 30px 30px 30px;
 }
 .inmodal .modal-body {
-  background: #f8fafb;
+  background: #ffffff;
 }
 .inmodal .modal-header {
-  padding: 30px 15px;
+  /* padding: 30px 15px; */
   text-align: center;
 }
 .animated.modal.fade .modal-dialog {
@@ -4046,7 +4046,7 @@ table.table-mail tr td {
 }
 .lazur-bg,
 .bg-info {
-  background-color: #23c6c8;
+  background-color: #ffffff;
   color: #ffffff;
 }
 .yellow-bg,
@@ -5568,7 +5568,7 @@ table.shoping-cart-table tr td:last-child {
 .image-imitation {
   background-color: #f8f8f9;
   text-align: center;
-  padding: 200px 0;
+  /* padding: 200px 0; */
 }
 .product-main-price small {
   font-size: 10px;
