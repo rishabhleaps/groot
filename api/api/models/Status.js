@@ -20,11 +20,11 @@ module.exports = {
     },
     accountStatus: {
       type: 'string',
-      isIn: ['R', 'G', 'B']
+      isIn: ['R', 'G', 'Y']
     },
     projectStatus: {
       type: 'string',
-      isIn: ['R', 'G', 'B']
+      isIn: ['R', 'G', 'Y']
     },
     accountStatusUpdatedAt: {
       type: 'string',
