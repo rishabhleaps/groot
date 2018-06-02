@@ -37,7 +37,7 @@ $nodejs -v
 ```
 ---
 ### Project Structure
-
+```
 |-Groot
     |-api
         |-api
@@ -111,7 +111,7 @@ $nodejs -v
     |-router
         |-.gitkeep
     |-README.md
-
+```
 ---
 ### License
 This project is licensed under Nineleaps Technology Solutions Pvt Ltd. © 2018.
