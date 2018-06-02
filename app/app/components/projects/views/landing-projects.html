@@ -1,24 +1,25 @@
 <ng-include src="'app/components/projects/views/filter.html'"></ng-include>
+
 <div class="container-fluid fill-height">
   <ng-include src="'app/shared/templates/top-nav.html'"></ng-include>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-10">
-      <div class="little-margin">
-        <form method="get">
-          <div class="input-group give-width">
-            <input type="text" placeholder="   Search for projects..." name="search" class="form-control input-lg radius-property">
-          </div>
-        </form>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-10">
+        <div class="little-margin">
+          <form method="get">
+            <div class="input-group give-width">
+              <input type="text" placeholder="   Search for projects..." name="search" class="form-control input-lg radius-property">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-2 little-margin">
+        <a data-toggle="modal" data-target="#filter"><button class="btn btn-primary btn-lg filter-color" type="button"><i class="fa fa-filter"></i>Filter</button>
       </div>
     </div>
-
-    <div class="col-md-2 little-margin">
-      <a data-toggle="modal" data-target="#filter"><button class="btn btn-primary btn-lg filter-color" type="button"><i class="fa fa-filter"></i>Filter</button>
-    </div>
   </div>
-</div>
   <!-- <div class="row upper-margin">
     <div class="col-md-4 color-code-red">
     </div>
@@ -28,9 +29,10 @@
     </div>
   </div> -->
 
-  <div class="row align-row upper-margin">
+<div class="row align-row upper-margin">
 
     <div ng-repeat="project in projects">
+
     <a ui-sref="projectDetail">
       <div class="col-md-4">
         <div class="widget lazur-bg no-padding card-height">
@@ -54,6 +56,7 @@
               <small class="account-text-sub">{{ project.status[0].accountStatusUpdatedAt | date:'dd-mm-yyyy'}}</small><br/>
               <small class="account-text-sub">Account Manager</small>
             </div>
+
             <div class="upper-card-project-margin">
               <small class="account-text">Project Status</small><br/>
               <div class="col-md-6 circle-margin" ng-if="!project.status[0]">
@@ -73,13 +76,13 @@
                 <small class="account-text-sub">Project Manager</small>
               </div>
             </div>
+            </div>
           </div>
         </div>
       </div>
     </a>
-  </div>
-</div>
-<!-- <div class="footer">
+      </div>
+    </div>
+    <!-- <div class="footer">
   <ng-include src="'app/shared/templates/footer.html'"></ng-include>
 </div> -->
-</div>

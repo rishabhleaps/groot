@@ -37,6 +37,10 @@
   font-family: "Lucida Console", Monaco, monospace;
   font-weight: bold;
 }
+.container-fluid {
+    height: 100%;
+    overflow-y: hidden; /* don't show content that exceeds my height */
+}
 
 form-group>.nineleaps-color:hover {
   background-color: #28426d;
@@ -50,6 +54,7 @@ form-group>.nineleaps-color:hover {
   height: auto !important;
   /* cross-browser */
   height: 100%;
+  min-height: 700px;
   /* cross-browser */
 }
 
@@ -274,7 +279,7 @@ img {
 }
 
 a:hover {
-  background-color: #347EBC;
+  background-color: inherit !important;
 }
 
 ul {

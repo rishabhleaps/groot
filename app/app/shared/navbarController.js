@@ -45,7 +45,7 @@ angular
 
     $scope.logout = function(){
        localStorage.clear();
-       $state.go('login');
+       $state.go('splash');
     }
 
       init();

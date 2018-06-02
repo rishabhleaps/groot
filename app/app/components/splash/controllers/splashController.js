@@ -8,7 +8,6 @@ angular.module('groot.controllers')
       }
 
       function setInterval() {
-        // $('html,body').css('background-color', '#e0cba1 !important');
         $timeout(function() {
           $state.go('login')
         }, 2500);
