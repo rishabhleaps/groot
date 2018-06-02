@@ -1,0 +1,11 @@
+<ng-include src="'app/components/projectDetail/views/editProject.html'"></ng-include> <div class="contanier-fluid upper-margin-projectDetail"> <ng-include src="'app/shared/templates/top-nav.html'"></ng-include> <div class="wrapper wrapper-content"> <div class="row"> <div class="col-lg-12"> <div class="ibox float-e-margins"> <div class="ibox-content" id="ibox-content"> <div class="row"> <!-- <div class="col-md-5">
+                <div class="product-images">
+                  <div>
+                    <div class="image-imitation">
+                      <img src='assets/images/groot.1eab682f.gif' width="430px" height='500px' />
+                    </div>
+                  </div>
+                </div>
+              </div> --> <div class="col-md-12"> <h2 class="font-bold m-b-xs">{{projectName || 'Project Name'}}</h2> <div class="m-t-md"> <h5 class="product-main-price">Last Account Status Update: <small class="product-main-price"> {{ date || '2018-01-01'}}</small> </h5> <h5 class="product-main-price">Last Project Status Update: <small class="product-main-price"> {{ date || '2018-01-01'}}</small> </h5> </div> <hr> <h4>Headline</h4> <div class="small text-muted"> {{ headline || 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum' }} <br> </div> <dl class="small m-t-md"> <dt>Accountable <dd>{{ accounatble || 'Jon Snow'}}.<br> <dt>Responsible <dd>{{ responsible || 'Tyrion Lannister'}}.<br> <dt>Consulted <dd>{{ consulted || 'Arya Stark'}}<br> <dt>Informed <dd>{{ informed || 'Ned Stark'}} </dl> <hr> <div> <div class="btn-group"> <a data-toggle="modal" data-target="#editProject"><button class="btn btn-white btn-sm detail-button"><i class="fa fa-pencil"></i> Edit Status </button></a> <a ui-sref="history"><button class="btn btn-white btn-sm detail-button"><i class="fa fa-history"></i> See History</button></a> <a><button class="btn btn-white btn-sm detail-button"><i class="fa fa-envelope"></i> Contact with RACI </button></a> </div> </div> </div> </div> </div> </div> </div> </div> </div> <div class="footer"> <ng-include src="'app/shared/templates/footer.html'"></ng-include> </div> </div> <script>$(document).ready(function(){
+    $(this).scrollTop(0);
+});</script>

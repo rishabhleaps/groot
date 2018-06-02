@@ -1,12 +1,13 @@
-<ng-include src="'app/shared/templates/top-nav.html'"></ng-include>
 <ng-include src="'app/shared/templates/footer.html'"></ng-include>
 
-<div class="container-fluid  upper-margin-projectDetail">
+<div class="container-fluid fill-height upper-margin-projectDetail">
+  <ng-include src="'app/shared/templates/top-nav.html'"></ng-include>
+
   <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-md-12">
-        <h2 style="padding-top: 10px;">History</h2>
+      <h2 style="padding-top: 10px;">History</h2>
     </div>
-</div>
+  </div>
 
   <div class="wrapper wrapper-content">
     <div class="row animated fadeInRight">
@@ -15,35 +16,43 @@
           <div class="ibox-content" id="ibox-content">
             <div id="vertical-timeline" class="vertical-container dark-timeline center-orientation">
 
-              <div class="vertical-timeline-block">
+              <div class="vertical-timeline-block" ng-repeat="hist in history">
                 <div class="vertical-timeline-icon navy-bg">
                   <i class="fa fa-history"></i>
                 </div>
                 <div class="vertical-timeline-content">
                   <h2>Headline</h2>
-                  <p>{{ headline || 'Conference on the sales results for the previous year. Monica please examine sales trends in marketing
-                    and products. Below please find the current status of the sale.'}}
+                  <p>{{ hist.headline}}
                   </p>
-                  <div class="vertical-date">{{ date || 'Today'}} <br/>
+                  <div class="vertical-date">{{ hist.accountStatusUpdatedAt | date:'dd-mm-yyyy'}} <br/>
                     <div class="row">
-                    <small>Account Status</small><br/>
-                    <div class="col-md-4 color-code-red-history">
+                      <small>Account Status</small><br/>
+                      <div class="col-md-6 circle-margin" ng-if="!hist.accountStatus">
+                        <div class="status-circle-green"></div>
+                      </div>
+                      <div class="col-md-6 circle-margin" ng-if="hist.accountStatus === 'R'">
+                        <div class="status-circle-red"></div>
+                      </div>
+                      <div class="col-md-6 circle-margin" ng-if="hist.accountStatus === 'Y'">
+                        <div class="status-circle-yellow"></div>
+                      </div>
+                      <div class="col-md-6 circle-margin" ng-if="hist.accountStatus === 'G'">
+                        <div class="status-circle-green"></div>
+                      </div>
                     </div>
-                    <div class="col-md-4 color-code-yellow-history">
-                    </div>
-                    <div class="col-md-4 color-code-green-history">
+                    <div class="row">
+                      <small>Project Status</small><br/>
+                      <div class="col-md-6 circle-margin" ng-if="hist.projectStatus === 'R'">
+                        <div class="status-circle-red"></div>
+                      </div>
+                      <div class="col-md-6 circle-margin" ng-if="hist.projectStatus === 'Y'">
+                        <div class="status-circle-yellow"></div>
+                      </div>
+                      <div class="col-md-6 circle-margin" ng-if="hist.projectStatus === 'G'">
+                        <div class="status-circle-green"></div>
+                      </div>
                     </div>
                   </div>
-                  <div class="row">
-                    <small>Project Status</small><br/>
-                    <div class="col-md-4 color-code-red-history">
-                    </div>
-                    <div class="col-md-4 color-code-yellow-history">
-                    </div>
-                    <div class="col-md-4 color-code-green-history">
-                    </div>
-                  </div>
-                </div>
                 </div>
               </div>
             </div>
@@ -52,4 +61,5 @@
       </div>
     </div>
   </div>
+
 </div>

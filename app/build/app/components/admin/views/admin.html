@@ -1,0 +1,11 @@
+<ng-include src="'app/components/login/views/signup.html'"></ng-include> <div class="container-fluid"> <ng-include src="'app/shared/templates/top-nav.html'"></ng-include> <div class="grey-bg" style="margin-top:30px"> <div class="middle-box text-center loginscreen animated"> <div class="ibox-content"> <h3>Create Project</h3> <form class="m-t" ng-submit="postProject()" role="form"> <div class="form-group"> <input type="text" class="form-control" ng-model="project.projectName" placeholder="Project Name" required> </div> <div class="form-group"> <input type="text" class="form-control" ng-model="project.customerName" placeholder="Customer Name" required> </div> <!-- <div>
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default calendar-border">
+                    <i class="fa fa-calendar"></i>
+                </button>
+              </span>
+              <input type="text" class="form-control" uib-datepicker-popup="dd/MM/yyyy" placeholder="dd/mm/yyyy" ng-pattern="/\d\d/\d\d/\d\d\d\d/" popup-placement="bottom-left" is-open="popup1.opened" name="dateEdit" datepicker-options="dateOptions" ng-required="true"
+                close-text="Close" ng-model="project.date" style="border-radius:4px;" />
+            </div>
+          </div> --> <div class="form-group"> <input type="date" class="form-control" ng-model="project.date" placeholder="Date" required> </div> <div class="form-group"> <hr> </div> <div class="form-group"> <input type="email" class="form-control" ng-model="project.accountable" placeholder="Accountable" required> </div> <div class="form-group"> <input type="email" class="form-control" ng-model="project.responsible" placeholder="Responsible" required multiple> </div> <div class="form-group"> <input type="email" class="form-control" ng-model="project.consulted" placeholder="Consulted" required multiple> </div> <div class="form-group"> <input type="email" class="form-control" ng-model="project.informed" placeholder="Informed" required multiple> </div> <br> <button type="submit" class="btn btn-primary block full-width m-b">Create Project</button> </form> </div> </div> </div> <div class="footer"> <ng-include src="'app/shared/templates/footer.html'"></ng-include> </div> </div>

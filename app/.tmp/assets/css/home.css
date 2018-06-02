@@ -37,6 +37,12 @@ form-group>.nineleaps-color:hover {
   font-weight: bold;
 }
 
+.fill-height {
+    min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+
 .signout {
   color: white;
 }
@@ -97,6 +103,7 @@ form-group>.nineleaps-color:hover {
   background-color: #23c6c8 !important;
   border-color: #23c6c8 !important;
   height: 46px;
+  width: 100%;
 }
 
 .search-color {
@@ -205,6 +212,13 @@ form-group>.nineleaps-color:hover {
   width: 30px;
   border-radius: 50px;
   background-color: yellow;
+}
+
+.status-circle-green {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: green;
 }
 
 .card-height {

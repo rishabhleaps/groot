@@ -21,11 +21,11 @@ angular
         canvas.height = '80';
         document.body.appendChild(canvas);
         var context = canvas.getContext('2d');
-        context.fillStyle = "#d3d3d3";
+        context.fillStyle = "#23c6c8";
         context.globalAlpha = 1.0;
         context.fillRect(0, 0, canvas.width, canvas.height);
-        context.font = "28px Avenir";
-        context.fillStyle = "#000";
+        context.font = "bold 28px Avenir";
+        context.fillStyle = "#ffffff";
         context.globalAlpha = 1.0;
         if (last === undefined) {
           var firstname = name[0].toUpperCase();

@@ -12,9 +12,8 @@
             </div>
             <div id="menubar">
               <ul id="menu" class="nav navbar-nav" ng-if="isLoggedIn">
-                <li><a ui-sref="projects">Projects</a></li>
-                <li><a ui-sref="insights">Insights</a></li>
-                <li><a ui-sref="admin">Admin</a></li>
+                <li ng-class="{ active : $state.includes('projects')}"><a ui-sref="projects">Projects</a></li>
+                <li ng-class="{ active : $state.includes('admin')}"><a ui-sref="admin">Admin</a></li>
               </ul>
             </div>
           </div>
