@@ -1,12 +1,13 @@
+
 # Groot
 ---
 Web application that tracks and manages the status of ongoing Projects within an Organisation. The status of every individual project can be categorized as follows:
 * **Red**    - *Critical State*
 * **Yellow** - *Ok/Moderate State*
 * **Green**  - *Good State*
-
-## Getting Started
 ---
+## Getting Started
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
@@ -34,13 +35,14 @@ $nodejs -v
 ```
 **Docker Installion** -
 
-### Deployment
 ---
+### Deployment
 How to deploy this web application on Live System.
 
-### License
 ---
+### License
 This project is licensed under Nineleaps Technology Solutions Pvt Ltd. © 2018.
 
+---
 # Thank You 
 Team - *We Are Groot*
