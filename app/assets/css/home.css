@@ -13,9 +13,17 @@
   margin: 0 0 15px;
 }
 
+.vertical-timeline-block:last-child {
+  margin-bottom: 0;
+}
+
 .form-control, .btn {
   min-height: 38px;
   border-radius: 2px;
+}
+
+.center-orientation .vertical-timeline-block:nth-child(even) .vertical-timeline-content .vertical-date{
+  text-align: left !important;
 }
 
 .btn {
@@ -29,6 +37,10 @@
   font-family: "Lucida Console", Monaco, monospace;
   font-weight: bold;
 }
+.container-fluid {
+    height: 100%;
+    overflow-y: hidden; /* don't show content that exceeds my height */
+}
 
 form-group>.nineleaps-color:hover {
   background-color: #28426d;
@@ -38,9 +50,12 @@ form-group>.nineleaps-color:hover {
 }
 
 .fill-height {
-    min-height: 100%;
-    height:auto !important; /* cross-browser */
-    height: 100%; /* cross-browser */
+  min-height: 100%;
+  height: auto !important;
+  /* cross-browser */
+  height: 100%;
+  min-height: 700px;
+  /* cross-browser */
 }
 
 .signout {
@@ -264,7 +279,7 @@ img {
 }
 
 a:hover {
-  background-color: #347EBC;
+  background-color: inherit !important;
 }
 
 ul {
@@ -311,7 +326,6 @@ ol li {
 
 #header {
   background: #FFFFFF;
-  border-bottom: 3px solid #347EBC;
   height: 70px;
   filter: drop-shadow(6px 2px 15px rgba(0, 0, 0, 0.4));
 }
@@ -366,20 +380,23 @@ ul#menu li {
   list-style: none;
   margin: 1px 2px 0 0;
   background: transparent;
+  text-decoration: none;
 }
 
-ul#menu li a:hover{
+ul#menu li a:hover {
   font-weight: bold;
-  background-color: #347EBC;
-  background: #347EBC;
-  color: #FFF;
+  color: #000000;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: inherit !important;
 }
 
 ul#menu li a {
   font: normal 130% 'trebuchet ms', sans-serif;
   display: block;
   float: left;
-  margin-top: 28px;
+  margin-top: 20px;
   padding: 10px 35px 8px 28px;
   text-align: center;
   color: #000000;
@@ -406,9 +423,10 @@ ul#menu li.selected a, ul#menu li.selected a:hover {
   text-shadow: 10px 10px gray;
 }
 
-.lbtn{
+.lbtn {
   margin-top: 12px;
 }
+
 .splash-img {
   display: block;
   margin-left: auto;
@@ -416,10 +434,10 @@ ul#menu li.selected a, ul#menu li.selected a:hover {
   /* width: 67.5%; */
 }
 
-.upper-card-project-margin{
+.upper-card-project-margin {
   padding-top: 5px;
 }
 
-.main-pad{
-  padding:22px !important;
+.main-pad {
+  padding: 22px !important;
 }

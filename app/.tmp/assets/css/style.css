@@ -180,8 +180,8 @@ ul.nav-second-level {
   background: #293846;
 }
 .nav > li.active {
-  border-left: 4px solid #19aa8d;
-  background: #293846;
+  border-top: 4px solid #23c6c8 !important;
+  background: inherit !important;
 }
 .nav.nav-second-level > li.active {
   border: none;
