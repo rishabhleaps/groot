@@ -16,7 +16,8 @@ module.exports = {
     get: get,
     update: update,
     getList: getList,
-    delete: deleteProject
+    delete: deleteProject,
+    getProjectStatusList: getProjectStatusList
 
 };
 
@@ -46,3 +47,6 @@ async function deleteProject(req, res) {
     return res.json(await Project.deleteProject(req.params.id));
 }
 
+async function getProjectStatusList(req, res) {
+    return res.json(await Project.getProjectStatusList(req.params.id));
+}

@@ -42,7 +42,8 @@ module.exports = {
   getProject: getProject,
   updateProject: updateProject,
   getProjectList: getProjectList,
-  deleteProject: deleteProject
+  deleteProject: deleteProject,
+  getProjectStatusList: getProjectStatusList
 
 };
 
@@ -65,7 +66,10 @@ async function getProject(id) {
 }
 
 async function getProjectList() {
-  let projects = await Project.find({isDeleted: false}).populate('racis').populate('status', {sort: 'updatedAt DESC'});
+  let projects = await Project
+    .find({isDeleted: false})
+    .populate('racis')
+    .populate('status', {sort: 'updatedAt DESC', limit: 1,});
 
   let projectList = projects.map(project => {
     let racis = project.racis.map(raci => {
@@ -80,6 +84,10 @@ async function getProjectList() {
   });
 
   return Promise.all(projectList).then(projectList => projectList);
+}
+
+async function getProjectStatusList(id) {
+  return Status.getStatusByProjectId(id).then(status => status);
 }
 
 async function deleteProject(id, body) {

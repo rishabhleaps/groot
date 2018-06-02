@@ -40,13 +40,42 @@ module.exports = {
   getStatus: getStatus,
   updateStatus: updateStatus,
   getStatusList: getStatusList,
-  deleteStatus: deleteStatus
+  deleteStatus: deleteStatus,
+  getStatusByProjectId: getStatusByProjectId
 
 };
 
 async function createStatus(body) {
+  let lastStatusList = await Status.find({project: body.project}).sort('updatedAt DESC').limit(1);
+  let lastStatus = lastStatusList[0];
+
+  if (!lastStatus) {
+    let accountStatusUpdatedAt = new Date();
+    let projectStatusUpdatedAt = new Date();
+
+    body = Object.assign({accountStatusUpdatedAt: accountStatusUpdatedAt, projectStatusUpdatedAt: projectStatusUpdatedAt}, body);      
+  } else {
+    if (lastStatus.accountStatus !== body.accountStatus && lastStatus.projectStatus !== body.projectStatus) {
+      let accountStatusUpdatedAt = new Date();
+      let projectStatusUpdatedAt = new Date();
+
+      body = Object.assign({accountStatusUpdatedAt: accountStatusUpdatedAt, projectStatusUpdatedAt: projectStatusUpdatedAt}, body);
+    } else if (lastStatus.accountStatus !== body.accountStatus) {
+
+      let accountStatusUpdatedAt = new Date();
+
+      body = Object.assign({accountStatusUpdatedAt: accountStatusUpdatedAt, projectStatusUpdatedAt: lastStatus.projectStatusUpdatedAt}, body);
+    } else if ((lastStatus.projectStatus !== body.projectStatus)) {
+      let projectStatusUpdatedAt = new Date();
+
+      body = Object.assign({accountStatusUpdatedAt: lastStatus.accountStatusUpdatedAt, projectStatusUpdatedAt: projectStatusUpdatedAt}, body);
+    } else {
+      body = Object.assign({accountStatusUpdatedAt: lastStatus.accountStatusUpdatedAt, projectStatusUpdatedAt: lastStatus.projectStatusUpdatedAt}, body);
+    }   
+  } 
+
   body = Object.assign({id: generateStatusId()}, body);
-  
+
   let status = await Status.create(body).fetch();
 
   return status;
@@ -64,7 +93,7 @@ async function getStatus(id) {
 }
 
 async function getStatusList() {
-  return await Status.find({isDeleted: false});
+  return await Status.find({isDeleted: false}).sort('updatedAt DESC');
 }
 
 async function deleteStatus(id, body) {
@@ -72,6 +101,12 @@ async function deleteStatus(id, body) {
   status = Object.assign(status, {isDeleted: true});
 
   return await updateStatus(id, status);
+}
+
+async function getStatusByProjectId(id) {
+  return await Status.find({
+    project: id
+  }).sort('updatedAt DESC');
 }
 
 function generateStatusId() {

@@ -25,6 +25,10 @@ module.exports.routes = {
     'delete /project/:id': {
         controller: 'ProjectController',
         action:'delete'      
-    }
+    },
+    'get /projects/:id/status': {
+        controller: 'ProjectController',
+        action:'getProjectStatusList'
+    },
     
 };
