@@ -4,6 +4,7 @@ angular
     function($scope, $state, $stateParams, localStorageService) {
 
       function init() {
+        $scope.$state=$state;
         var name = localStorageService.get('name');
         $scope.isLoggedIn = localStorageService.get('isLoggedIn');
         $scope.imageUrl='';
