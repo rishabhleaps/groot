@@ -6,6 +6,7 @@
  *   version 2.7.1
  *
 */
+
 h1,
 h2,
 h3,
@@ -3443,6 +3444,9 @@ body.tour-open .animated {
   border-bottom: 1px solid #e7eaec;
 }
 body {
+  min-height: 100%;
+  height: auto !important;
+  
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #e0e0e0;
   font-size: 13px;

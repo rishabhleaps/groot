@@ -5,7 +5,6 @@ Web application that tracks and manages the status of ongoing Projects within an
 * **Red**    - *Critical State*
 * **Yellow** - *Ok/Moderate State*
 * **Green**  - *Good State*
----
 
 ---
 ## Getting Started
