@@ -9,11 +9,12 @@ var uuid = require('uuid4');
 
 module.exports = {
 
+  dontUseObjectIds: true,
   attributes: {
-    uid: {
-      type: 'string',
-      unique: true
-    },
+    id: { 
+      type: 'string', 
+      columnName: '_id' 
+    },  
     name: {
       type: 'string',
       required: true      
@@ -21,7 +22,8 @@ module.exports = {
     email: {
       type: 'string',
       required: true,
-      isEmail: true
+      isEmail: true,
+      unique: true
     },
     contactNumber: {
       type: 'string',
@@ -49,20 +51,21 @@ module.exports = {
 };
 
 async function createUser(body) {
-  body = Object.assign({uid: generateUserId()}, body);
+  body = Object.assign({id: generateUserId()}, body);
   
   let user = await User.create(body).fetch();
 
   return user;
 }
 
-async function updateUser(uid, body) {
-  return await User.update({uid: uid}, body).fetch();
+async function updateUser(id, body) {
+  return await User.update({id: id}, body).fetch();
 }
 
-async function getUser(uid) {
+async function getUser(id) {
   return await User.findOne({
-    uid: uid
+    id: id,
+    isDeleted: false
   });
 }
 
@@ -70,11 +73,11 @@ async function getUserList() {
   return await User.find({isDeleted: false});
 }
 
-async function deleteUser(uid, body) {
-  let user = await getUser(uid);
+async function deleteUser(id, body) {
+  let user = await getUser(id);
   user = Object.assign(user, {isDeleted: true});
 
-  return await updateUser(uid, user);
+  return await updateUser(id, user);
 }
 
 function generateUserId() {

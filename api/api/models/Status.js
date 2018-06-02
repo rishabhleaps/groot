@@ -8,10 +8,11 @@ var uuid = require('uuid4');
 
 module.exports = {
 
+  dontUseObjectIds: true,
   attributes: {
-    sid: {
-      type: 'string',
-      unique: true
+    id: { 
+      type: 'string', 
+      columnName: '_id'
     },
     headline: {
       type: 'string',
@@ -30,6 +31,9 @@ module.exports = {
     },
     projectStatusUpdatedAt: {
       type: 'string',
+    },
+    project: {
+      model: 'project'
     }
   },
   createStatus: createStatus,
@@ -41,20 +45,21 @@ module.exports = {
 };
 
 async function createStatus(body) {
-  body = Object.assign({sid: generateStatusId()}, body);
+  body = Object.assign({id: generateStatusId()}, body);
   
   let status = await Status.create(body).fetch();
 
   return status;
 }
 
-async function updateStatus(sid, body) {
-  return await Status.update({sid: sid}, body).fetch();
+async function updateStatus(id, body) {
+  return await Status.update({id: id}, body).fetch();
 }
 
-async function getStatus(sid) {
+async function getStatus(id) {
   return await Status.findOne({
-    sid: sid
+    id: id,
+    isDeleted: false
   });
 }
 
@@ -62,14 +67,13 @@ async function getStatusList() {
   return await Status.find({isDeleted: false});
 }
 
-async function deleteStatus(sid, body) {
-  let status = await getStatus(sid);
+async function deleteStatus(id, body) {
+  let status = await getStatus(id);
   status = Object.assign(status, {isDeleted: true});
 
-  return await updateStatus(sid, status);
+  return await updateStatus(id, status);
 }
 
 function generateStatusId() {
   return "groot:sid:" + uuid();
 }
-
