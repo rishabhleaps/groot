@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('groot.controllers')
-  .controller('projectsController', ['$scope', '$state', '$stateParams','growl','projectsService',
-    function($scope, $state, $stateParams,growl,projectsService) {
+  .controller('projectsController', ['$scope', '$state', '$stateParams','growl','projectsService','localStorageService',
+    function($scope, $state, $stateParams,growl,projectsService,localStorageService) {
       function init() {
         $scope.projects=[];
         getAllProjects();
@@ -13,7 +13,7 @@ angular.module('groot.controllers')
         .getAllProjects()
         .then(function(response) {
           $scope.projects = response.data;
-          console.log($scope.projects);
+          localStorageService.set('projects',$scope.projects);
         })
         .catch(function(err){
           growl.error(err);

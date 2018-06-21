@@ -6,7 +6,7 @@
         <h4 class="modal-title">Edit Project</h4>
       </div>
       <div class="modal-body">
-        <form class="m-t" role="form">
+        <form class="m-t" role="form" ng-submit="submitForm()">
           <div class="form-group">
 
             <div class="row">
@@ -25,30 +25,30 @@
 
             <div class="row">
               <div class="col-md-6">
-                <a ng-model="accountStatus.red">
+                <a ng-model="project.accountStatus.red">
                   <div class="col-md-4 color-code-red-history">
                   </div>
                 </a>
-                <a ng-model="accountStatus.yellow">
+                <a ng-model="project.accountStatus.yellow">
                   <div class="col-md-4 color-code-yellow-history">
                   </div>
                 </a>
-                <a ng-model="accountStatus.green">
+                <a ng-model="project.accountStatus.green">
                   <div class="col-md-4 color-code-green-history">
                   </div>
                 </a>
               </div>
 
               <div class="col-md-6">
-                <a ng-model="projectStatus.red">
+                <a ng-model="project.projectStatus.red">
                   <div class="col-md-4 color-code-red-history">
                   </div>
                 </a>
-                <a ng-model="projectStatus.yellow">
+                <a ng-model="project.projectStatus.yellow">
                   <div class="col-md-4 color-code-yellow-history">
                   </div>
                 </a>
-                <a ng-model="projectStatus.green">
+                <a ng-model="project.projectStatus.green">
                   <div class="col-md-4 color-code-green-history">
                   </div>
                 </a>
@@ -57,13 +57,13 @@
           </div>
           <div class="form-group">
             <label class="input-home">Headline</label>
-            <textarea type="text" class="form-control" placeholder="Headline" required></textarea>
+            <textarea type="text" class="form-control" placeholder="Headline" ng-model="project.headline" required></textarea>
           </div>
 
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-rounded btn-block">Update Project Status</button>
+        <button type="submit" class="btn btn-primary btn-rounded btn-block">Update Project Status</button>
       </div>
     </div>
   </div>

@@ -19,26 +19,64 @@
                 </div>
               </div> -->
               <div class="col-md-12">
-                <h2 class="font-bold m-b-xs">{{projectName || 'Project Name'}}</h2>
-                <div class="m-t-md">
-                  <h5 class="product-main-price">Last Account Status Update: <small class="product-main-price">  {{ date || '2018-01-01'}}</small> </h5>
-                  <h5 class="product-main-price">Last Project Status Update: <small class="product-main-price">  {{ date || '2018-01-01'}}</small> </h5>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h2 class="font-bold m-b-xs">{{projectDetail.name || 'Project Name'}}</h2>
+                    <div class="m-t-md">
+                      <h5 class="product-main-price">Last Account Status Update: <small class="product-main-price">  {{ projectDetail.status[0].accountStatusUpdatedAt | date:'dd-mm-yyyy'}}</small> </h5>
+                      <h5 class="product-main-price">Last Project Status Update: <small class="product-main-price">  {{ projectDetail.status[0].projectStatusUpdatedAt | date:'dd-mm-yyyy'}}</small> </h5>
+                    </div>
+                  </div>
+                  <div class="col-md-6 pull-right">
+                    <div class="row">
+                    <small class="account-text">Account Status</small><br/>
+                    <div class="col-md-6 circle-margin" ng-if="!projectDetail.status[0]">
+                      <div class="status-circle-green"></div>
+                    </div>
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'R'">
+                      <div class="status-circle-red"></div>
+                    </div>
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'Y'">
+                      <div class="status-circle-yellow"></div>
+                    </div>
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'G'">
+                      <div class="status-circle-green"></div>
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <small class="account-text">Project Status</small><br/>
+                    <div class="col-md-6 circle-margin" ng-if="!projectDetail.status[0]">
+                      <div class="status-circle-green"></div>
+                    </div>
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'R'">
+                      <div class="status-circle-red"></div>
+                    </div>
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'Y'">
+                      <div class="status-circle-yellow"></div>
+                    </div>
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'G'">
+                      <div class="status-circle-green"></div>
+                    </div>
+                  </div>
+                  </div>
                 </div>
+
                 <hr>
                 <h4>Headline</h4>
                 <div class="small text-muted">
-                  {{ headline || 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum' }}
+                  {{ projectDetail.status[0].headline || 'No Headline' }}
                   <br/>
                 </div>
                 <dl class="small m-t-md">
                   <dt>Accountable</dt>
-                  <dd>{{ accounatble || 'Jon Snow'}}.</dd><br/>
+                  <dd ng-repeat='project in projectDetail.racis'>{{ project.role==='A' ? project.name : ''}}</dd><br/>
                   <dt>Responsible</dt>
-                  <dd>{{ responsible || 'Tyrion Lannister'}}.</dd><br/>
+                  <dd ng-repeat='project in projectDetail.racis'>{{ project.role==='R' ? project.name : ''}}</dd><br/>
                   <dt>Consulted</dt>
-                  <dd>{{ consulted || 'Arya Stark'}}</dd><br/>
+                  <dd ng-repeat='project in projectDetail.racis'>{{ project.role==='C' ? project.name : ''}}</dd><br/>
                   <dt>Informed</dt>
-                  <dd>{{ informed || 'Ned Stark'}}</dd>
+                  <dd ng-repeat='project in projectDetail.racis'>{{ project.role==='I' ? project.name : ''}}</dd>
                 </dl>
                 <hr>
                 <div>

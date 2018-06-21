@@ -10,15 +10,15 @@ angular.module('groot.controllers')
       }
 
       function getHistoryForProject(projectId) {
-        historyService
-          .getHistoryForProject(projectId)
-          .then(function(response) {
-            $scope.history = response.data;
-            console.log($scope.history);
-          })
-          .catch(function(err) {
-            growl.error(err);
-          });
+        // historyService
+        //   .getHistoryForProject(projectId)
+        //   .then(function(response) {
+        //     $scope.history = response.data;
+        //     console.log($scope.history);
+        //   })
+        //   .catch(function(err) {
+        //     console.log(err);
+        //   });
       }
       init();
     }
