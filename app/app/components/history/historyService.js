@@ -3,11 +3,10 @@ angular.module('groot.services')
     function($q, $http, Settings) {
 
       function getHistoryForProject(projectId) {
-        // return $http({
-        //   method: 'GET',
-        //   url: 'http://http://13.127.222.131:1337/projects/groot:pid:5d2b42ca-39db-4698-883e-93341b3afef9/status'
-        // });
-        return $http.get('app/shared/data/history.json');
+        return $http({
+          method: 'GET',
+          url: 'http://13.127.222.131:1337/projects/'+projectId + '/status'
+        });
       }
 
       return {

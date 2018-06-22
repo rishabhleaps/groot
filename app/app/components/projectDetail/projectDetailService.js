@@ -5,7 +5,7 @@ angular.module('groot.services')
       function getDetail(projectId) {
         return $http({
           method: 'GET',
-          url: 'http://13.127.222.131:1337/projects/' + projectId
+          url: 'http://13.127.222.131:1337/projects/' + projectId + '/status'
         });
       }
 

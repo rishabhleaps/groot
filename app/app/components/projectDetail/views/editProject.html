@@ -26,30 +26,30 @@
             <div class="row">
               <div class="col-md-6">
                 <a ng-click="setAccountStatus('R')">
-                  <div class="col-md-4 color-code-red-history">
+                  <div id="accountRed" ng-class="{ 'full-opacity': projectDetail.status[0].accountStatus === 'R', 'half-opacity': projectDetail.status[0].accountStatus !== 'R' }" class="col-md-4 color-code-red-history">
                   </div>
                 </a>
                 <a ng-click="setAccountStatus('Y')">
-                  <div class="col-md-4 color-code-yellow-history">
+                  <div id="accountYellow" ng-class="{ 'full-opacity': projectDetail.status[0].accountStatus === 'Y', 'half-opacity': projectDetail.status[0].accountStatus !== 'Y' }" class="col-md-4 color-code-yellow-history">
                   </div>
                 </a>
                 <a ng-click="setAccountStatus('G')">
-                  <div class="col-md-4 color-code-green-history">
+                  <div id="accountGreen" ng-class="{ 'full-opacity': projectDetail.status[0].accountStatus === 'G', 'half-opacity': projectDetail.status[0].accountStatus !== 'G' }"class="col-md-4 color-code-green-history">
                   </div>
                 </a>
               </div>
 
               <div class="col-md-6">
                 <a ng-click="setProjectStatus('R')">
-                  <div class="col-md-4 color-code-red-history">
+                  <div id="proRed" ng-class="{ 'full-opacity': projectDetail.status[0].projectStatus === 'R', 'half-opacity': projectDetail.status[0].projectStatus !== 'R' }" class="col-md-4 color-code-red-history">
                   </div>
                 </a>
                 <a ng-click="setProjectStatus('Y')">
-                  <div class="col-md-4 color-code-yellow-history">
+                  <div id="proYellow" ng-class="{ 'full-opacity': projectDetail.status[0].projectStatus === 'Y', 'half-opacity': projectDetail.status[0].projectStatus !== 'Y' }" class="col-md-4 color-code-yellow-history">
                   </div>
                 </a>
                 <a ng-click="setProjectStatus('G')">
-                  <div class="col-md-4 color-code-green-history">
+                  <div id="proGreen" ng-class="{ 'full-opacity': projectDetail.status[0].projectStatus === 'G', 'half-opacity': projectDetail.status[0].projectStatus !== 'G' }" class="col-md-4 color-code-green-history">
                   </div>
                 </a>
               </div>

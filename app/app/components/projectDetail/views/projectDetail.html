@@ -14,8 +14,8 @@
                   <div class="col-md-6">
                     <h2 class="font-bold m-b-xs">{{projectDetail.name || 'Project Name'}}</h2>
                     <div class="m-t-md">
-                      <h5 class="product-main-price">Last Account Status Update: <small class="product-main-price">  {{ projectDetail.status[0].accountStatusUpdatedAt | date:'dd-mm-yyyy'}}</small> </h5>
-                      <h5 class="product-main-price">Last Project Status Update: <small class="product-main-price">  {{ projectDetail.status[0].projectStatusUpdatedAt | date:'dd-mm-yyyy'}}</small> </h5>
+                      <h5 class="product-main-price">Last Account Status Update: <small class="product-main-price">  {{ projectDetail.status[0].accountStatusUpdatedAt | date:'yyyy-MM-dd'}}</small> </h5>
+                      <h5 class="product-main-price">Last Project Status Update: <small class="product-main-price">  {{ projectDetail.status[0].projectStatusUpdatedAt | date:'yyyy-MM-dd'}}</small> </h5>
                     </div>
                   </div>
                   <div class="col-md-6 pull-right">
@@ -40,13 +40,13 @@
                     <div class="col-md-6 circle-margin" ng-if="!projectDetail.status[0]">
                       <div class="status-circle-green"></div>
                     </div>
-                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'R'">
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].projectStatus === 'R'">
                       <div class="status-circle-red"></div>
                     </div>
-                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'Y'">
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].projectStatus === 'Y'">
                       <div class="status-circle-yellow"></div>
                     </div>
-                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].accountStatus === 'G'">
+                    <div class="col-md-6 circle-margin" ng-if="projectDetail.status[0].projectStatus === 'G'">
                       <div class="status-circle-green"></div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@
                   <div class="btn-group">
                     <a data-toggle="modal" data-target="#editProject"><button class="btn btn-white btn-sm detail-button"><i class="fa fa-pencil"></i> Edit Status </button></a>
                     <a ui-sref="history({id:projectId})"><button class="btn btn-white btn-sm detail-button"><i class="fa fa-history"></i> See History</button></a>
-                    <a><button class="btn btn-white btn-sm detail-button"><i class="fa fa-envelope"></i> Contact with RACI </button></a>
+                    <a href="mailto:{{mailto}}?Subject={{projectDetail.name}}"><button class="btn btn-white btn-sm detail-button"><i class="fa fa-envelope"></i> Contact with RACI </button></a>
                   </div>
                 </div>
               </div>

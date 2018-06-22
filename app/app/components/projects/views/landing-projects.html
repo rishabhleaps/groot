@@ -20,14 +20,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="row upper-margin">
-    <div class="col-md-4 color-code-red">
-    </div>
-    <div class="col-md-4 color-code-yellow">
-    </div>
-    <div class="col-md-4 color-code-green">
-    </div>
-  </div> -->
 
 <div class="row align-row upper-margin">
 
@@ -53,8 +45,8 @@
               <div class="status-circle-green"></div>
             </div>
             <div class="col-md-5 col-md-offset-1">
-              <small class="account-text-sub">{{ project.status[0].accountStatusUpdatedAt | date:'dd-mm-yyyy'}}</small><br/>
-              <small class="account-text-sub">Account Manager</small>
+              <small class="account-text-sub">{{ project.status[0].accountStatusUpdatedAt | date:'yyyy-MM-dd'}}</small><br/>
+              <small class="account-text-sub" ng-repeat='project in project.racis'>{{ project.role==='A' ? project.name : ''}}</small>
             </div>
 
             <div class="upper-card-project-margin">
@@ -62,18 +54,18 @@
               <div class="col-md-6 circle-margin" ng-if="!project.status[0]">
                 <div class="status-circle-green"></div>
               </div>
-              <div class="col-md-6 circle-margin" ng-if="project.status[0].accountStatus === 'R'">
+              <div class="col-md-6 circle-margin" ng-if="project.status[0].projectStatus === 'R'">
                 <div class="status-circle-red"></div>
               </div>
-              <div class="col-md-6 circle-margin" ng-if="project.status[0].accountStatus === 'Y'">
+              <div class="col-md-6 circle-margin" ng-if="project.status[0].projectStatus === 'Y'">
                 <div class="status-circle-yellow"></div>
               </div>
-              <div class="col-md-6 circle-margin" ng-if="project.status[0].accountStatus === 'G'">
+              <div class="col-md-6 circle-margin" ng-if="project.status[0].projectStatus === 'G'">
                 <div class="status-circle-green"></div>
               </div>
               <div class="col-md-5 col-md-offset-1">
-                <small class="account-text-sub">{{  project.status[0].projectStatusUpdatedAt | date:'dd-mm-yyyy' }}</small><br/>
-                <small class="account-text-sub">Project Manager</small>
+                <small class="account-text-sub">{{  project.status[0].projectStatusUpdatedAt | date:'yyyy-MM-dd' }}</small><br/>
+                <small class="account-text-sub" ng-repeat='project in project.racis'>{{ project.role==='R' ? project.name : ''}}</small>
               </div>
             </div>
             </div>
