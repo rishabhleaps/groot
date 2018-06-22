@@ -18,12 +18,14 @@ angular.module('groot.controllers')
             $scope.projectDetail = projects[i];
           }
         }
-        console.log($scope.projectDetail);
         for(var i=0;i<$scope.projectDetail.racis.length;i++){
           $scope.mailto += $scope.projectDetail.racis[i].email + ',';
         }
         $scope.mailto = $scope.mailto.slice(0,-1);
         $scope.project.headline = $scope.projectDetail.status[0].headline;
+
+        $scope.project.accountStatus = $scope.projectDetail.status[0].accountStatus;
+        $scope.project.projectStatus = $scope.projectDetail.status[0].projectStatus;
       }
 
       $scope.submitForm = function() {
