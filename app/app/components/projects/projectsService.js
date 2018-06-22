@@ -5,7 +5,7 @@ angular.module('groot.services')
       function getAllProjects() {
         // return $http({
         //   method: 'GET',
-        //   url: 'http://13.126.208.107:1337/projects'
+        //   url: 'http://13.127.222.131:1337/projects'
         // });
         return $http.get('app/shared/data/projects.json');
       }

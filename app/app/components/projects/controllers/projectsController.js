@@ -5,6 +5,7 @@ angular.module('groot.controllers')
     function($scope, $state, $stateParams,growl,projectsService,localStorageService) {
       function init() {
         $scope.projects=[];
+        $scope.filter = {};
         getAllProjects();
       }
 
@@ -19,6 +20,19 @@ angular.module('groot.controllers')
           growl.error(err);
         });
       }
+
+      $scope.applyFilter = function(){
+        var projects = $scope.projects;
+        for (var i = 0; i < projects.length; i++) {
+          if (projects[i].name === $scope.filter.customerName) {
+            $scope.projects=[];
+            $scope.projects= projects[i];
+          }
+        }
+        angular.element(document.querySelector('#filter')).modal('hide');
+      }
+
+
 
       init();
     }

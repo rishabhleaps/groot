@@ -25,30 +25,30 @@
 
             <div class="row">
               <div class="col-md-6">
-                <a ng-model="project.accountStatus.red">
+                <a ng-click="setAccountStatus('R')">
                   <div class="col-md-4 color-code-red-history">
                   </div>
                 </a>
-                <a ng-model="project.accountStatus.yellow">
+                <a ng-click="setAccountStatus('Y')">
                   <div class="col-md-4 color-code-yellow-history">
                   </div>
                 </a>
-                <a ng-model="project.accountStatus.green">
+                <a ng-click="setAccountStatus('G')">
                   <div class="col-md-4 color-code-green-history">
                   </div>
                 </a>
               </div>
 
               <div class="col-md-6">
-                <a ng-model="project.projectStatus.red">
+                <a ng-click="setProjectStatus('R')">
                   <div class="col-md-4 color-code-red-history">
                   </div>
                 </a>
-                <a ng-model="project.projectStatus.yellow">
+                <a ng-click="setProjectStatus('Y')">
                   <div class="col-md-4 color-code-yellow-history">
                   </div>
                 </a>
-                <a ng-model="project.projectStatus.green">
+                <a ng-click="setProjectStatus('G')">
                   <div class="col-md-4 color-code-green-history">
                   </div>
                 </a>
@@ -59,12 +59,12 @@
             <label class="input-home">Headline</label>
             <textarea type="text" class="form-control" placeholder="Headline" ng-model="project.headline" required></textarea>
           </div>
-
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary btn-rounded btn-block">Update Project Status</button>
+          </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary btn-rounded btn-block">Update Project Status</button>
-      </div>
+
     </div>
   </div>
 </div>
